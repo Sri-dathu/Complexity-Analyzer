@@ -3,7 +3,7 @@
 
 # 🧠 Complexity-Analyzer
 
-**Code2Complexity** is a web-based tool that analyzes the time and space complexity of code. Designed for educational and personal use, it helps users understand algorithmic performance through symbolic derivation and visual explanation.
+**Complexity-Analyzer* is a web-based tool that analyzes the time and space complexity of code. Designed for educational and personal use, it helps users understand algorithmic performance through symbolic derivation and visual explanation.
 
 ## 🚀 Features
 
@@ -25,7 +25,7 @@
 ```bash
 # Clone the repo
 git clone https://github.com/your-username/Complexity-Analyzer.git
-cd code2complexity
+cd Complexity-Analyzer
 
 # Set up backend
 cd backend
