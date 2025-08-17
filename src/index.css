@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Academic color palette - deep blues and clean whites */
+    --background: 210 40% 99%;
+    --foreground: 218 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 35% 15%;
+
+    /* Primary: Academic deep blue */
+    --primary: 218 85% 25%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 218 75% 45%;
+
+    /* Secondary: Sophisticated gray-blue */
+    --secondary: 215 20% 92%;
+    --secondary-foreground: 218 35% 15%;
+
+    /* Muted: Subtle background tones */
+    --muted: 215 25% 94%;
+    --muted-foreground: 218 15% 45%;
+
+    /* Accent: Mathematical highlight */
+    --accent: 220 70% 92%;
+    --accent-foreground: 218 85% 25%;
+
+    /* Success: For correct analysis */
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: For confidence scores */
+    --warning: 45 90% 50%;
+    --warning-foreground: 45 30% 15%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 218 85% 25%;
+
+    --radius: 0.75rem;
+
+    /* Mathematical notation background */
+    --math-bg: 220 30% 97%;
+    --math-border: 220 25% 85%;
+
+    /* Code editor theme */
+    --editor-bg: 215 25% 98%;
+    --editor-border: 215 20% 85%;
+
+    /* Gradients for sophisticated look */
+    --gradient-primary: linear-gradient(135deg, hsl(218 85% 25%), hsl(218 75% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(220 70% 95%), hsl(215 25% 90%));
+    --gradient-math: linear-gradient(180deg, hsl(220 30% 99%), hsl(220 30% 97%));
+
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -4px hsl(218 85% 25% / 0.15);
+    --shadow-math: 0 2px 8px -2px hsl(218 85% 25% / 0.08);
+
+    --sidebar-background: 215 25% 97%;
+    --sidebar-foreground: 218 35% 25%;
+    --sidebar-primary: 218 85% 25%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 215 25% 92%;
+    --sidebar-accent-foreground: 218 35% 25%;
+    --sidebar-border: 215 20% 88%;
+    --sidebar-ring: 218 85% 25%;
+  }
+
+  .dark {
+    /* Dark academic theme */
+    --background: 218 35% 8%;
+    --foreground: 210 40% 95%;
+
+    --card: 218 30% 10%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 218 30% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 218 75% 65%;
+    --primary-foreground: 218 35% 8%;
+    --primary-glow: 218 85% 75%;
+
+    --secondary: 218 20% 18%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 218 20% 15%;
+    --muted-foreground: 218 15% 65%;
+
+    --accent: 220 60% 20%;
+    --accent-foreground: 210 40% 95%;
+
+    --success: 145 50% 55%;
+    --success-foreground: 218 35% 8%;
+
+    --warning: 45 80% 60%;
+    --warning-foreground: 218 35% 8%;
+
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 210 40% 95%;
+
+    --border: 218 20% 18%;
+    --input: 218 20% 18%;
+    --ring: 218 75% 65%;
+
+    --math-bg: 218 25% 12%;
+    --math-border: 218 20% 20%;
+
+    --editor-bg: 218 30% 9%;
+    --editor-border: 218 20% 18%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(218 75% 65%), hsl(218 85% 75%));
+    --gradient-accent: linear-gradient(135deg, hsl(218 25% 15%), hsl(218 20% 20%));
+    --gradient-math: linear-gradient(180deg, hsl(218 25% 10%), hsl(218 25% 12%));
+
+    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-math: 0 2px 8px -2px hsl(0 0% 0% / 0.2);
+
+    --sidebar-background: 218 30% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 218 75% 65%;
+    --sidebar-primary-foreground: 218 35% 8%;
+    --sidebar-accent: 218 20% 15%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 218 20% 18%;
+    --sidebar-ring: 218 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv03", "cv04", "cv11";
+  }
+
+  /* Mathematical notation styling */
+  .katex {
+    font-size: 1.1em;
+  }
+
+  .katex-display {
+    margin: 1rem 0;
+    background: hsl(var(--math-bg));
+    border: 1px solid hsl(var(--math-border));
+    border-radius: calc(var(--radius) - 2px);
+    padding: 1rem;
+  }
+
+  /* Code editor styling */
+  .monaco-editor {
+    border-radius: var(--radius);
+  }
+
+  /* Smooth transitions */
+  * {
+    transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
